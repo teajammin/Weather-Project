@@ -36,14 +36,14 @@ let dateTitle = document.querySelector("#date");
 dateTitle.innerHTML = `${day} ${month} ${date}, ${hour}:${minutes}, ${year}`;
 
 function changeUnits() {
-  let todayTemp = document.querySelector(".todayTempDeg");
-  console.log(todayTemp);
   let farenhite = (todayTemp * 9) / 5 + 32;
   todayTemp.innerHTML = farenhite;
 }
 
-let unitButton = document.querySelector("#units");
-unitButton.addEventListener("click", changeUnits);
+function buttonPress() {
+  let unitButton = document.querySelector("#units");
+  unitButton.addEventListener("click", changeUnits);
+}
 
 function showWeather(response) {
   document.querySelector(".cityTitle").innerHTML = response.data.name;
@@ -57,6 +57,7 @@ function showWeather(response) {
   document.querySelector("#wind").innerHTML = `${Math.round(
     response.data.wind.speed
   )}kmph`;
+  buttonPress();
 }
 
 function api(city) {
