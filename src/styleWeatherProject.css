@@ -24,6 +24,7 @@ form {
   margin-left: auto;
   margin-top: 20px;
   border: #414941 solid;
+  border-radius: 20px;
   display: block;
   box-shadow: 12px 12px 20px 1px grey;
 }
@@ -85,7 +86,7 @@ form {
   font-family: sans-serif;
   color: #414941;
   text-align: center;
-  margin: 5px 200px 5px 35px;
+  margin: 5px 450px;
 }
 
 .foot {
