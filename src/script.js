@@ -36,8 +36,9 @@ let dateTitle = document.querySelector("#date");
 dateTitle.innerHTML = `${day} ${month} ${date}, ${hour}:${minutes}, ${year}`;
 
 function changeUnits() {
-  let farenhite = (todayTemp * 9) / 5 + 32;
-  todayTemp.innerHTML = farenhite;
+  let todayTemp = document.querySelector(".todayTempDeg");
+  let farenhite = Math.round((temp * 9) / 5 + 32);
+  todayTemp.innerHTML = `${farenhite}º F`;
 }
 
 function buttonPress() {
@@ -45,11 +46,14 @@ function buttonPress() {
   unitButton.addEventListener("click", changeUnits);
 }
 
+let temp = null;
+
 function showWeather(response) {
   document.querySelector(".cityTitle").innerHTML = response.data.name;
   document.querySelector(".todayTempDeg").innerHTML = `${Math.round(
     response.data.main.temp
-  )}º`;
+  )}ºC`;
+  temp = Math.round(response.data.main.temp);
   document.querySelector("#des").innerHTML = response.data.weather[0].main;
   document.querySelector("#hum").innerHTML = `${Math.round(
     response.data.main.humidity
