@@ -76,7 +76,7 @@ form {
 }
 
 .units:hover {
-  color: #000cff;
+  color: #44c95a;
 }
 
 .todayStats {
@@ -98,4 +98,8 @@ form {
 .date {
   text-decoration: none;
   font-size: 16px;
+}
+
+.footerLink:hover {
+  color: #44c95a;
 }
