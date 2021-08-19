@@ -46,6 +46,30 @@ function buttonPress() {
   unitButton.addEventListener("click", changeUnits);
 }
 
+function desBack() {
+  let back = document.querySelector("background");
+  if (des === "Clouds") {
+    back.innerHTML =
+      "/Users/theazeitoun/Desktop/Code/VS/SheCodes/SheCodes Plus/Weather-Project/media/pepeClouds.jpeg";
+  }
+  elseif(des === "Clear");
+  {
+    back.innerHTML =
+      "/Users/theazeitoun/Desktop/Code/VS/SheCodes/SheCodes Plus/Weather-Project/media/pepeClear.jpeg";
+  }
+  elseif(des === "Rain");
+  {
+    back.innerHTML =
+      "/Users/theazeitoun/Desktop/Code/VS/SheCodes/SheCodes Plus/Weather-Project/media/pepeRain.jpeg";
+  }
+  elseif(des === "Snow");
+  {
+    back.innerHTML =
+      "/Users/theazeitoun/Desktop/Code/VS/SheCodes/SheCodes Plus/Weather-Project/media/pepeSnow.jpeg";
+  }
+}
+
+let des = null;
 let temp = null;
 
 function showWeather(response) {
@@ -54,14 +78,16 @@ function showWeather(response) {
     response.data.main.temp
   )}ºC`;
   temp = Math.round(response.data.main.temp);
-  document.querySelector("#des").innerHTML = response.data.weather[0].main;
   document.querySelector("#hum").innerHTML = `${Math.round(
     response.data.main.humidity
   )}%`;
+  let des = document.querySelector("#des");
+  des.innerHTML = `${response.data.weather[0].main}`;
   document.querySelector("#wind").innerHTML = `${Math.round(
     response.data.wind.speed
   )}kmph`;
   buttonPress();
+  desBack();
 }
 
 function api(city) {
