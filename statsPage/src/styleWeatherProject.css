@@ -18,7 +18,8 @@ form {
 
 .container {
   margin: 0 auto;
-  width: 1000%;
+  width: fit-content;
+  display: block;
   padding: 0px 15px;
   margin-top: 20px;
   border: #414941 solid;
