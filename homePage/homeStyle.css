@@ -6,13 +6,16 @@ h1 {
   font-weight: thick;
   font-family: Otomanopee One, sans-serif;
   size: 20px;
+  color: #414941;
 }
 
-button {
-  display: block;
-  margin: 0 auto;
+a {
+  text-align: center;
+  margin-left: 670px;
+  text-decoration: none;
+  border: 20px;
   border-radius: 20px;
-  color: #414941;
-  padding: 10px;
-  background: #f6eb9c;
+  color: #f6eb9c;
+  padding: 15px;
+  background: #414941;
 }
