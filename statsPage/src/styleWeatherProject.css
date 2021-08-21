@@ -1,7 +1,6 @@
 body {
-  background: white;
+  background-color: #fff8d1;
 }
-
 h1 {
   color: #414941;
   font-family: "Otomanopee One", sans-serif;
@@ -22,6 +21,7 @@ form {
   display: block;
   padding: 0px 15px;
   margin-top: 20px;
+  padding-bottom: 300px;
   border: #414941 solid;
   border-radius: 20px;
   display: block;
@@ -33,7 +33,7 @@ form {
   border-radius: 20px;
   color: #414941;
   padding: 5px;
-  background: transparent;
+  background: white;
 }
 
 .submitButton:hover {
@@ -45,7 +45,7 @@ form {
   padding: 5px;
   border-radius: 6px;
   border-color: #414941;
-  background: transparent;
+  background: white;
 }
 
 .loca {
@@ -57,7 +57,7 @@ form {
   border-radius: 20px;
   color: #414941;
   padding: 5px;
-  background: transparent;
+  background: whitesmoke;
 }
 
 .loca:hover {
