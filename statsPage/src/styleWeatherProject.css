@@ -1,5 +1,5 @@
 body {
-  background-color: #fff8d1;
+  background-size: 1500px;
 }
 h1 {
   color: #414941;
@@ -15,17 +15,15 @@ form {
   margin: 20px;
 }
 
-.container {
+.stats {
   margin: 0 auto;
-  width: fit-content;
+  margin-top: 40px;
   display: block;
-  padding: 0px 15px;
-  margin-top: 20px;
-  padding-bottom: 300px;
   border: #414941 solid;
   border-radius: 20px;
-  display: block;
   box-shadow: 12px 12px 20px 1px grey;
+  background-color: #fff;
+  opacity: 0.9;
 }
 
 .submitButton {
@@ -57,7 +55,7 @@ form {
   border-radius: 20px;
   color: #414941;
   padding: 5px;
-  background: whitesmoke;
+  background: white ;
 }
 
 .loca:hover {
@@ -68,11 +66,12 @@ form {
 .units {
   font-family: "Otomanopee One", sans-serif;
   display: block;
-  margin-left: 70px;
-  font-size: 12px;
+  margin-left: 75px;
+  font-size: 13px;
   background: transparent;
   border: #414941 thick;
   border-radius: 13px;
+  margin-bottom: 20px;
 }
 
 .units:hover {
@@ -81,13 +80,19 @@ form {
 
 .todayStats {
   border: #759370 solid;
-  border-radius: 5px;
+  border-radius: 20px;
   font-family: sans-serif;
   color: #414941;
   text-align: center;
   width: fit-content;
   padding: 0 50px;
   margin: 0 auto;
+}
+
+.img {
+  width: 100px;
+  position: absolute;
+  margin: 25px 0px 0px 200px;
 }
 
 .date {
