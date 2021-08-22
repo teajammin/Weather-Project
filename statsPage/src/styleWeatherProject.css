@@ -91,7 +91,7 @@ form {
 
 .img {
   width: 100px;
-  position: absolute;
+  position: fixed;
   margin: 25px 0px 0px 200px;
 }
 

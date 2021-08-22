@@ -73,6 +73,10 @@ let des = null;
 let temp = null;
 
 function showWeather(response) {
+  document.querySelector("#icon").setAttribute(
+    "src", 
+    `http://openweathermap.org/img/wn/${respone.data.weather.icon}@2x.png`
+    )
   document.querySelector(".cityTitle").innerHTML = response.data.name;
   document.querySelector(".todayTempDeg").innerHTML = `${Math.round(
     response.data.main.temp
