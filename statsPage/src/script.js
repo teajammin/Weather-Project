@@ -47,26 +47,27 @@ function buttonPress() {
 }
 
 function desBack() {
-  let back = document.querySelector("background");
-  if (des === "Clouds") {
-    back.innerHTML =
-      "/Users/theazeitoun/Desktop/Code/VS/SheCodes/SheCodes Plus/Weather-Project/media/pepeClouds.jpeg";
-  }
-  elseif(des === "Clear");
+  if (des === "Clouds") 
   {
-    back.innerHTML =
-      "/Users/theazeitoun/Desktop/Code/VS/SheCodes/SheCodes Plus/Weather-Project/media/pepeClear.jpeg";
-  }
-  elseif(des === "Rain");
-  {
-    back.innerHTML =
-      "/Users/theazeitoun/Desktop/Code/VS/SheCodes/SheCodes Plus/Weather-Project/media/pepeRain.jpeg";
-  }
-  elseif(des === "Snow");
-  {
-    back.innerHTML =
-      "/Users/theazeitoun/Desktop/Code/VS/SheCodes/SheCodes Plus/Weather-Project/media/pepeSnow.jpeg";
-  }
+    let back = document.setAttribute(
+      "background",
+      "/Users/theazeitoun/Desktop/Code/VS/SheCodes/SheCodes Plus/Weather-Project/media/pepeClouds.jpeg")
+  } elseif (des === "Clear") {
+    let back = document.setAttribute(
+      "background",
+      "/Users/theazeitoun/Desktop/Code/VS/SheCodes/SheCodes Plus/Weather-Project/media/pepeClear.jpeg")
+    } elseif (des === "Clear") {
+    let back = document.setAttribute(
+      "background",
+      "/Users/theazeitoun/Desktop/Code/VS/SheCodes/SheCodes Plus/Weather-Project/media/pepeRain.jpeg")
+    } elseif 
+    (des === "Clear") {
+    let back = document.setAttribute(
+      "background",
+    "/Users/theazeitoun/Desktop/Code/VS/SheCodes/SheCodes Plus/Weather-Project/media/pepeSnow.jpeg")
+     ;
+  });
+  
 }
 
 let des = null;
@@ -75,8 +76,8 @@ let temp = null;
 function showWeather(response) {
   document.querySelector("#icon").setAttribute(
     "src", 
-    `http://openweathermap.org/img/wn/${respone.data.weather.icon}@2x.png`
-    )
+    `http://openweathermap.org/img/wn/${respone.data.weather[0].icon}@2x.png`
+    );
   document.querySelector(".cityTitle").innerHTML = response.data.name;
   document.querySelector(".todayTempDeg").innerHTML = `${Math.round(
     response.data.main.temp
