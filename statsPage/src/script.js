@@ -53,17 +53,17 @@ function desBack() {
     let back = document.setAttribute(
       "background",
       "/Users/theazeitoun/Desktop/Code/VS/SheCodes/SheCodes Plus/Weather-Project/media/pepeClouds.jpeg")
-  } elseif (des === "Clear") 
+  } else if (des === "Clear") 
   {
     let back = document.setAttribute(
       "background",
       "/Users/theazeitoun/Desktop/Code/VS/SheCodes/SheCodes Plus/Weather-Project/media/pepeClear.jpeg")
-  } elseif (des === "Clear") 
+  } else if (des === "Clear") 
   {
     let back = document.setAttribute(
       "background",
       "/Users/theazeitoun/Desktop/Code/VS/SheCodes/SheCodes Plus/Weather-Project/media/pepeRain.jpeg")
-    } elseif 
+    } else if 
     (des === "Clear") 
     {
     let back = document.setAttribute(
@@ -77,12 +77,11 @@ let des = null;
 let temp = null;
 
 function showWeather(response) {
-  console.log(response);
   let icon = document.querySelector("#icon")
+  let iconData = response.data.weather[0].icon;
   icon.setAttribute(
     "src", 
-    `http://openweathermap.org/img/wn/${respone.data.weather[0].icon}@2x.png`
-    );
+    iconData);
   document.querySelector(".cityTitle").innerHTML = response.data.name;
   document.querySelector(".todayTempDeg").innerHTML = `${Math.round(
     response.data.main.temp
