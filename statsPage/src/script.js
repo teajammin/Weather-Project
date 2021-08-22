@@ -54,18 +54,18 @@ function desBack() {
   back.setAttribute(
       "background",
       "/Users/theazeitoun/Desktop/Code/VS/SheCodes/SheCodes Plus/Weather-Project/media/pepeClouds.jpeg")
-  } else if (des === "Clear") 
+  } if (des === "Clear") 
   {
   back.setAttribute(
       "background",
       "/Users/theazeitoun/Desktop/Code/VS/SheCodes/SheCodes Plus/Weather-Project/media/pepeClear.jpeg")
-  } else if (des === "Clear") 
+  } if (des === "Rain") 
   {
   back.setAttribute(
       "background",
       "/Users/theazeitoun/Desktop/Code/VS/SheCodes/SheCodes Plus/Weather-Project/media/pepeRain.jpeg")
     } else if 
-    (des === "Clear") 
+    (des === "Snow") 
     {
    back.setAttribute(
       "background",

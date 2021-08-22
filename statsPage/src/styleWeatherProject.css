@@ -18,6 +18,7 @@ form {
 .stats {
   margin: 0 auto;
   margin-top: 40px;
+  margin: 40px 200px;
   display: block;
   border: #414941 solid;
   border-radius: 20px;
