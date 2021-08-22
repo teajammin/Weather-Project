@@ -47,26 +47,29 @@ function buttonPress() {
 }
 
 function desBack() {
+  let back = document.querySelector("#container")
   if (des === "Clouds") 
   {
     let back = document.setAttribute(
       "background",
       "/Users/theazeitoun/Desktop/Code/VS/SheCodes/SheCodes Plus/Weather-Project/media/pepeClouds.jpeg")
-  } elseif (des === "Clear") {
+  } elseif (des === "Clear") 
+  {
     let back = document.setAttribute(
       "background",
       "/Users/theazeitoun/Desktop/Code/VS/SheCodes/SheCodes Plus/Weather-Project/media/pepeClear.jpeg")
-    } elseif (des === "Clear") {
+  } elseif (des === "Clear") 
+  {
     let back = document.setAttribute(
       "background",
       "/Users/theazeitoun/Desktop/Code/VS/SheCodes/SheCodes Plus/Weather-Project/media/pepeRain.jpeg")
     } elseif 
-    (des === "Clear") {
+    (des === "Clear") 
+    {
     let back = document.setAttribute(
       "background",
     "/Users/theazeitoun/Desktop/Code/VS/SheCodes/SheCodes Plus/Weather-Project/media/pepeSnow.jpeg")
-     ;
-  });
+  };
   
 }
 
@@ -74,7 +77,9 @@ let des = null;
 let temp = null;
 
 function showWeather(response) {
-  document.querySelector("#icon").setAttribute(
+  console.log(response);
+  let icon = document.querySelector("#icon")
+  icon.setAttribute(
     "src", 
     `http://openweathermap.org/img/wn/${respone.data.weather[0].icon}@2x.png`
     );
