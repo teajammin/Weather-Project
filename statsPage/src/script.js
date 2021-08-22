@@ -48,25 +48,26 @@ function buttonPress() {
 
 function desBack() {
   let back = document.querySelector("#container")
+  let des = document.querySelector("#des");
   if (des === "Clouds") 
   {
-    let back = document.setAttribute(
+  back.setAttribute(
       "background",
       "/Users/theazeitoun/Desktop/Code/VS/SheCodes/SheCodes Plus/Weather-Project/media/pepeClouds.jpeg")
   } else if (des === "Clear") 
   {
-    let back = document.setAttribute(
+  back.setAttribute(
       "background",
       "/Users/theazeitoun/Desktop/Code/VS/SheCodes/SheCodes Plus/Weather-Project/media/pepeClear.jpeg")
   } else if (des === "Clear") 
   {
-    let back = document.setAttribute(
+  back.setAttribute(
       "background",
       "/Users/theazeitoun/Desktop/Code/VS/SheCodes/SheCodes Plus/Weather-Project/media/pepeRain.jpeg")
     } else if 
     (des === "Clear") 
     {
-    let back = document.setAttribute(
+   back.setAttribute(
       "background",
     "/Users/theazeitoun/Desktop/Code/VS/SheCodes/SheCodes Plus/Weather-Project/media/pepeSnow.jpeg")
   };
@@ -77,11 +78,9 @@ let des = null;
 let temp = null;
 
 function showWeather(response) {
-  let icon = document.querySelector("#icon")
+  let icon = document.querySelector("#icon");
   let iconData = response.data.weather[0].icon;
-  icon.setAttribute(
-    "src", 
-    iconData);
+  icon.setAttribute("src", iconData);
   document.querySelector(".cityTitle").innerHTML = response.data.name;
   document.querySelector(".todayTempDeg").innerHTML = `${Math.round(
     response.data.main.temp
