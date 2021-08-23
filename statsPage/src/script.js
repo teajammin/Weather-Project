@@ -47,31 +47,31 @@ function buttonPress() {
 }
 
 function desBack() {
-  let back = document.querySelector("#container")
+  let back = document.querySelector("#container");
   let des = document.querySelector("#des");
-  if (des === "Clouds") 
-  {
-  back.setAttribute(
+  if (des === "Clouds") {
+    back.setAttribute(
       "background",
-      "/Users/theazeitoun/Desktop/Code/VS/SheCodes/SheCodes Plus/Weather-Project/media/pepeClouds.jpeg")
-  } if (des === "Clear") 
-  {
-  back.setAttribute(
+      "/Users/theazeitoun/Desktop/Code/VS/SheCodes/SheCodes Plus/Weather-Project/media/pepeClouds.jpeg"
+    );
+  }
+  if (des === "Clear") {
+    back.setAttribute(
       "background",
-      "/Users/theazeitoun/Desktop/Code/VS/SheCodes/SheCodes Plus/Weather-Project/media/pepeClear.jpeg")
-  } if (des === "Rain") 
-  {
-  back.setAttribute(
+      "/Users/theazeitoun/Desktop/Code/VS/SheCodes/SheCodes Plus/Weather-Project/media/pepeClear.jpeg"
+    );
+  }
+  if (des === "Rain") {
+    back.setAttribute(
       "background",
-      "/Users/theazeitoun/Desktop/Code/VS/SheCodes/SheCodes Plus/Weather-Project/media/pepeRain.jpeg")
-    } else if 
-    (des === "Snow") 
-    {
-   back.setAttribute(
+      "/Users/theazeitoun/Desktop/Code/VS/SheCodes/SheCodes Plus/Weather-Project/media/pepeRain.jpeg"
+    );
+  } else if (des === "Snow") {
+    back.setAttribute(
       "background",
-    "/Users/theazeitoun/Desktop/Code/VS/SheCodes/SheCodes Plus/Weather-Project/media/pepeSnow.jpeg")
-  };
-  
+      "/Users/theazeitoun/Desktop/Code/VS/SheCodes/SheCodes Plus/Weather-Project/media/pepeSnow.jpeg"
+    );
+  }
 }
 
 let des = null;
@@ -79,7 +79,7 @@ let temp = null;
 
 function showWeather(response) {
   let icon = document.querySelector("#icon");
-  let iconData = response.data.weather[0].icon;
+  let iconData = `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`;
   icon.setAttribute("src", iconData);
   document.querySelector(".cityTitle").innerHTML = response.data.name;
   document.querySelector(".todayTempDeg").innerHTML = `${Math.round(
