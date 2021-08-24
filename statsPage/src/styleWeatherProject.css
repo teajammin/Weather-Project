@@ -1,5 +1,7 @@
 body {
   background-size: 1500px;
+  width: 800px;
+  display: block;
 }
 h1 {
   color: #414941;
@@ -84,6 +86,8 @@ form {
   color: #414941;
   text-align: left;
   width: fit-content;
+  font-size: larger;
+  font-stretch: wider;
 }
 
 .stats:hover {
