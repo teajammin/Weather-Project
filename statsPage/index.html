@@ -16,7 +16,7 @@
   </head>
 
 <body background="/Users/theazeitoun/Desktop/Code/VS/SheCodes/SheCodes Plus/Weather-Project/media/pepeClear.jpeg" id="container">
-  <div class="stats">
+  <div class="container">
     <form id="search">
     <input 
       type="text"
@@ -44,30 +44,42 @@
      <span id="date" class="date">  <span>
     </h1>
 
+
     <button class="units" id="units">
       change to imperial units
     </button>
 
-    <img 
-      src=""
-      class="img"
-      id="icon"
-    />
-
-    <div class="todayStats">
+    <div class="todayStats stats">
+    </br>
+      <span > Today</span>
+      <img src="" class="img" id="icon"/>
      </br> 
         <var class="todayTempDeg"> </var> <br /> 
-          <span id="des"> </span>
-           <br />
+        <span id="des"></span>          
+          <span class="w">
           Wind: <span id="wind"> </span>
           <br />
+          </span>
+          <span class="h">
           Humidity: <span id="hum"> </span>
+          </span>
           </br>
           </br>  
      </div>
+     
+
+    <span class="upcoming">
+    <span class="row">
+      <span class="col-2">
+        Thu
+        <img src="">
+      </span>
+    </span>
+  </span>
+
     <br />
   </div>
-  </div>
+</div>
 
     <script src="src/script.js"></script>
 </body>

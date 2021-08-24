@@ -15,7 +15,7 @@ form {
   margin: 20px;
 }
 
-.stats {
+.container {
   margin: 0 auto;
   margin-top: 40px;
   margin: 40px 200px;
@@ -79,23 +79,35 @@ form {
   color: #44c95a;
 }
 
-.todayStats {
-  border: #759370 solid;
-  border-radius: 20px;
+.stats {
   font-family: sans-serif;
   color: #414941;
-  text-align: center;
+  text-align: left;
   width: fit-content;
+}
+
+.stats:hover {
+  background-color: aliceblue;
+  border-radius: 20px;
+}
+
+.todayStats {
   padding: 0 50px;
-  margin: 0 auto;
+  margin-left: 70px;
+}
+
+.w {
+  padding-left: 100px;
+}
+
+.h {
+  padding: 0px 0px 200px 143px;
+  position: fixed;
 }
 
 .img {
   width: 100px;
-  position: absolute;
-  margin: 25px 0px 0px 200px;
-  border: #759370 solid;
-  border-radius: 20px;
+  position: fixed;
 }
 
 .date {
