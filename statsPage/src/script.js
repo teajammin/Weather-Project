@@ -80,17 +80,16 @@ let temp = null;
 function displayForcast() {
   let forcast = document.querySelector("#futureWeather");
 
-  let forcastHTML = `div class="row`;
+  let forcastHTML = `<div class=" row">`;
   let days = ["Thu", "Fri", "Sat", "Mon", "Tue", "Wed"];
 
   days.forEach(function (day) {
     forcastHTML =
       forcastHTML +
       `
-      <div class="futureStats" id="futureWeather">
-        <div class="row">
-          <div class="col-2">
-            <div class="futureStatsDate">${day}</div>
+    <div class="futureStats">
+      <div class="col-2">
+          <div class="futureStatsDate">${day}</div>
                 <img
                   src="http://openweathermap.org/img/wn/50d@2x.png"
                   alt=""
@@ -100,11 +99,13 @@ function displayForcast() {
                   <span class="futureStatsTemperatureMax"> 18° </span>
                   <span class="futureStatsTemperatureMin"> 12° </span>
                 </div>
-              </div>
-            <br />
-        </div>
+          </div>
+        <br />
+      </div>
     </div>
     `;
+    forcastHTML = forcastHTML + `</div>`;
+    forcast.innerHTML = forcastHTML;
   });
 
   function showWeather(response) {
