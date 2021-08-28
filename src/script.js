@@ -91,10 +91,11 @@ function displayForecast(response) {
 
   let forecastHTML = `<div class="row futureStats">`;
 
-  forecastDay.forEach(function (forecastDay) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="col-2">
+  forecastDay.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col-2">
           <div class="futureStatsDate">${formatDate(forecastDay.dt)}</div>
                 <img
                   src="http://openweathermap.org/img/wn/${
@@ -113,16 +114,10 @@ function displayForecast(response) {
                 </div>
           </div>
     `;
+    }
   });
   forecastHTML = forecastHTML + `</div>`;
   forecast.innerHTML = forecastHTML;
-}
-
-function findLocation(coordinates) {
-  console.log(coordinates);
-  let apiKey = "df6d18abaf72cab62d301f297c267d93";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(displayForecast);
 }
 
 function showWeather(response) {
@@ -145,7 +140,6 @@ function showWeather(response) {
   )}kmph`;
   buttonPress();
   desBack();
-
   findLocation(response.data.coord);
 }
 
@@ -162,10 +156,18 @@ function searchSubmit(event) {
   api(city);
 }
 
+function findLocation(coordinates) {
+  console.log(coordinates);
+  let apiKey = "df6d18abaf72cab62d301f297c267d93";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function changeToCurrent(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(findLocation);
 }
+
 let currentLoca = document.querySelector("#current-loca");
 currentLoca.addEventListener("click", changeToCurrent);
 
