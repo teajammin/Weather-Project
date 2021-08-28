@@ -49,32 +49,19 @@ function buttonPress() {
 function desBack() {
   let back = document.querySelector("#container");
   let des = document.querySelector("#des");
-  if (des === "Clouds") {
-    back.setAttribute(
-      "background",
-      "/Users/theazeitoun/Desktop/Code/VS/SheCodes/SheCodes Plus/Weather-Project/media/pepeClouds.jpeg"
-    );
-  }
-  if (des === "Clear") {
-    back.setAttribute(
-      "background",
-      "/Users/theazeitoun/Desktop/Code/VS/SheCodes/SheCodes Plus/Weather-Project/media/pepeClear.jpeg"
-    );
-  }
-  if (des === "Rain") {
-    back.setAttribute(
-      "background",
-      "/Users/theazeitoun/Desktop/Code/VS/SheCodes/SheCodes Plus/Weather-Project/media/pepeRain.jpeg"
-    );
-  } else if (des === "Snow") {
-    back.setAttribute(
-      "background",
-      "/Users/theazeitoun/Desktop/Code/VS/SheCodes/SheCodes Plus/Weather-Project/media/pepeSnow.jpeg"
-    );
+  if ((des = "Clouds")) {
+    back.style.background = `url("media/pepeClouds.jpeg")`;
+  } else if ((des = "Clear")) {
+    back.style.background = `url("media/pepeClear.jpeg")`;
+  } else if ((des = "Rain")) {
+    back.style.background = `url( "media/pepeRain.jpeg")`;
+  } else if ((des = "Snow")) {
+    back.style.background = `url("media/pepeSnow.jpeg")`;
   }
 }
 
 let temp = null;
+let des = null;
 
 function formatDate(timestamp) {
   let date = new Date(timestamp * 1000);
