@@ -1,5 +1,5 @@
 body {
-  background-size: 1500px;
+  background-size: 1700px;
   width: 800px;
 }
 h1 {
@@ -17,8 +17,7 @@ form {
 }
 
 .container {
-  display: block;
-  margin: 0 auto;
+  margin-top: 40px;
   border: #414941 solid;
   border-radius: 20px;
   box-shadow: 12px 12px 20px 1px grey;

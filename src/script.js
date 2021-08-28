@@ -1,13 +1,13 @@
 let now = new Date();
 
 let days = [
+  "Sunday",
   "Monday",
   "Tuesday",
   "Wednesday",
   "Thursday",
   "Friday",
   "Saturday",
-  "Sunday",
 ];
 
 let day = days[now.getDay()];
@@ -74,39 +74,62 @@ function desBack() {
   }
 }
 
-let des = null;
 let temp = null;
 
-function displayForcast() {
-  let forcast = document.querySelector("#futureWeather");
+function formatDate(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-  let forcastHTML = `<div class="row futureStats">`;
-  let days = ["Thu", "Fri", "Sat", "Mon", "Tue", "Wed"];
+  return days[day];
+}
 
-  days.forEach(function (day) {
-    forcastHTML =
-      forcastHTML +
+function displayForecast(response) {
+  let forecastDay = response.data.daily;
+
+  let forecast = document.querySelector("#futureWeather");
+
+  let forecastHTML = `<div class="row futureStats">`;
+
+  forecastDay.forEach(function (forecastDay) {
+    forecastHTML =
+      forecastHTML +
       `<div class="col-2">
-          <div class="futureStatsDate">${day}</div>
+          <div class="futureStatsDate">${formatDate(forecastDay.dt)}</div>
                 <img
-                  src="http://openweathermap.org/img/wn/50d@2x.png"
+                  src="http://openweathermap.org/img/wn/${
+                    forecastDay.weather[0].icon
+                  }@2x.png"
                   alt=""
                   width="42"
                 />
                 <div class="futureStatsTemperature">
-                  <span class="futureStatsTemperatureMax"> 18° </span>
-                  <span class="futureStatsTemperatureMin"> 12° </span>
+                  <span class="futureStatsTemperatureMax"> ${Math.round(
+                    forecastDay.temp.max
+                  )}º </span>
+                  <span class="futureStatsTemperatureMin"> ${Math.round(
+                    forecastDay.temp.min
+                  )}º </span>
                 </div>
           </div>
     `;
   });
-  forcastHTML = forcastHTML + `</div>`;
-  forcast.innerHTML = forcastHTML;
+  forecastHTML = forecastHTML + `</div>`;
+  forecast.innerHTML = forecastHTML;
 }
+
+function findLocation(coordinates) {
+  console.log(coordinates);
+  let apiKey = "df6d18abaf72cab62d301f297c267d93";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function showWeather(response) {
   let icon = document.querySelector("#icon");
   let iconData = `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`;
   icon.setAttribute("src", iconData);
+
   document.querySelector(".cityTitle").innerHTML = response.data.name;
   document.querySelector(".todayTempDeg").innerHTML = `${Math.round(
     response.data.main.temp
@@ -122,6 +145,8 @@ function showWeather(response) {
   )}kmph`;
   buttonPress();
   desBack();
+
+  findLocation(response.data.coord);
 }
 
 function api(city) {
@@ -137,17 +162,6 @@ function searchSubmit(event) {
   api(city);
 }
 
-let searchForm = document.querySelector("#search");
-searchForm.addEventListener("submit", searchSubmit);
-
-api("Athens");
-
-function findLocation(position) {
-  let apiKey = "df6d18abaf72cab62d301f297c267d93";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(showWeather);
-}
-
 function changeToCurrent(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(findLocation);
@@ -155,4 +169,7 @@ function changeToCurrent(event) {
 let currentLoca = document.querySelector("#current-loca");
 currentLoca.addEventListener("click", changeToCurrent);
 
-displayForcast();
+let searchForm = document.querySelector("#search");
+searchForm.addEventListener("submit", searchSubmit);
+
+api("Athens");
