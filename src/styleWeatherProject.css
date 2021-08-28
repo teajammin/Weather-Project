@@ -18,11 +18,13 @@ form {
 
 .container {
   margin-top: 40px;
+  width: fit-content;
   border: #414941 solid;
   border-radius: 20px;
   box-shadow: 12px 12px 20px 1px grey;
   background-color: #fff;
   opacity: 0.9;
+  padding-left: 50px;
 }
 
 .submitButton {
@@ -92,8 +94,10 @@ form {
 }
 
 .todayStats {
-  padding: 0 50px;
   margin-left: 70px;
+  width: fit-content;
+  padding: 0 50px;
+  margin: 0 auto;
 }
 
 .w {
