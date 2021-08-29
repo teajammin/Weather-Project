@@ -46,9 +46,9 @@ function buttonPress() {
   unitButton.addEventListener("click", changeUnits);
 }
 
-function desBack() {
+function desBack(response) {
   let back = document.querySelector("#container");
-  let des = document.querySelector("#des");
+  let des = response.data.weather[0].main;
   if ((des = "Clouds")) {
     back.style.background = `url("media/pepeClouds.jpeg")`;
   } else if ((des = "Clear")) {
@@ -61,7 +61,6 @@ function desBack() {
 }
 
 let temp = null;
-let des = null;
 
 function formatDate(timestamp) {
   let date = new Date(timestamp * 1000);
