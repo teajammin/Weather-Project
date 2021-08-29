@@ -46,20 +46,6 @@ function buttonPress() {
   unitButton.addEventListener("click", changeUnits);
 }
 
-function desBack(response) {
-  let back = document.querySelector("#container");
-  let des = response.data.weather[0].main;
-  if ((des = "Clouds")) {
-    back.style.background = `url("media/pepeClouds.jpeg")`;
-  } else if ((des = "Clear")) {
-    back.style.background = `url("media/pepeClear.jpeg")`;
-  } else if ((des = "Rain")) {
-    back.style.background = `url( "media/pepeRain.jpeg")`;
-  } else if ((des = "Snow")) {
-    back.style.background = `url("media/pepeSnow.jpeg")`;
-  }
-}
-
 let temp = null;
 
 function formatDate(timestamp) {
@@ -125,7 +111,6 @@ function showWeather(response) {
     response.data.wind.speed
   )}kmph`;
   buttonPress();
-  desBack();
   findLocation(response.data.coord);
 }
 
